@@ -20,6 +20,7 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        Log.d(LOG, "MainActivity: onCreate");
 
         button = (Button) findViewById(R.id.button);
         name = (EditText) findViewById(R.id.editName);
@@ -31,8 +32,6 @@ public class MainActivity extends AppCompatActivity {
                 Worker worker = new Worker(name.getText().toString(), position.getText().toString());
                 Intent intent = new Intent("showActivityTwo");
                 intent.putExtra(Worker.class.getCanonicalName(), worker);
-                Log.d(LOG, Worker.class.getCanonicalName());
-                Log.d(LOG, "myObj: " + worker.getName() + ", " + worker.getPosition());
                 startActivity(intent);
             }
         });
@@ -41,30 +40,30 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onStart() {
         super.onStart();
-        Log.d(LOG, "onStart");
+        Log.d(LOG, "MainActivity: onStart");
     }
 
     @Override
     protected void onResume() {
         super.onResume();
-        Log.d(LOG, "onResume");
+        Log.d(LOG, "MainActivity: onResume");
     }
 
     @Override
     protected void onPause() {
         super.onPause();
-        Log.d(LOG, "onPause");
+        Log.d(LOG, "MainActivity: onPause");
     }
 
     @Override
     protected void onStop() {
         super.onStop();
-        Log.d(LOG, "onStop");
+        Log.d(LOG, "MainActivity: onStop");
     }
 
     @Override
     protected void onDestroy() {
         super.onDestroy();
-        Log.d(LOG, "onDestroy");
+        Log.d(LOG, "MainActivity: onDestroy");
     }
 }
