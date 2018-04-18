@@ -14,20 +14,18 @@ public class ActivityTwo extends AppCompatActivity {
     final String LOG = "State";
     TextView name;
     TextView position;
+
     @Override
-    public void onCreate(Bundle savedInstanceState, PersistableBundle persistentState) {
-        super.onCreate(savedInstanceState, persistentState);
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_two);
 
         name = (TextView) findViewById(R.id.name);
         position = (TextView) findViewById(R.id.position);
-        Log.d(LOG, "getParcelableExtra");
 
         Worker worker = (Worker) getIntent().getParcelableExtra(
                 Worker.class.getCanonicalName());
-        name.setText(worker.getName());
-        position.setText(worker.getPosition());
-        Log.d(LOG, "myObj: " + worker.getName() + ", " + worker.getPosition());
-        Log.d(LOG, "Ghbdtn");
+        name.setText("ФИО: " + worker.getName());
+        position.setText("Должность: " + worker.getPosition());
     }
 }

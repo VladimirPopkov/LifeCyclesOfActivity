@@ -9,10 +9,10 @@
         android:layout_centerVertical="true"
         android:orientation="vertical" >
 
-        <Button
+        <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="АктивитиДва" />
+            android:text="Работник:" />
 
         <TextView
             android:id="@+id/name"
